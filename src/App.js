@@ -1,6 +1,7 @@
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Transactions from './pages/Transactions';
+import Requests from './pages/Requests';
 import Home from './pages/Home';
 import  './stylesheets/alignment.css';
 import  './stylesheets/custom-components.css';
@@ -23,7 +24,8 @@ function App() {
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
           <Route path="/" element={<ProtectedRoute ><Home/></ProtectedRoute>} />
-            <Route path="/transactions" element={<ProtectedRoute ><Transactions/></ProtectedRoute>} />
+          <Route path="/transactions" element={<ProtectedRoute ><Transactions/></ProtectedRoute>} />
+          <Route path="/requests" element={<ProtectedRoute ><Requests/></ProtectedRoute>} />
      
         
         </Routes>

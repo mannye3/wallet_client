@@ -3,7 +3,7 @@ const {axiosInstance} = require(".");
 
 export const LoginUser = async(payload) => {
     try {
-        const {data} = await axiosInstance.post("https://wallet-api-j3g6.onrender.com/api/auth/login", payload);
+        const {data} = await axiosInstance.post("/api/auth/login", payload);
         return data;
     } catch (error) {
        return error.response.data
@@ -15,7 +15,7 @@ export const LoginUser = async(payload) => {
 
 export const RegisterUser = async(payload) => {
     try {
-        const {data} = await axiosInstance.post("https://wallet-api-j3g6.onrender.com/api/auth/register", payload);
+        const {data} = await axiosInstance.post("/api/auth/register", payload);
         return data;
     } catch (error) {
        return error.response.data
@@ -29,7 +29,7 @@ export const GetUserInfo = async () => {
   try {
     const token = localStorage.getItem('token');
     const { data } = await axiosInstance.get(
-      "https://wallet-api-j3g6.onrender.com/api/auth/check-auth",
+      "/api/auth/check-auth",
       {
         headers: { Authorization: `Bearer ${token}` }, // Ensure token is sent.
       }

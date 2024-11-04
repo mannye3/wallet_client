@@ -25,10 +25,10 @@ function DefaultLayout({children}) {
     },
 
      {
-      title : "Request",
+      title : "Requests",
       icon : <i class="ri-hand-heart-line"></i>,
-      onClick : () =>navigate("/request"),
-      path : "/request"
+      onClick : () =>navigate("/requests"),
+      path : "/requests"
 
     },
 
