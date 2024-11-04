@@ -4,7 +4,7 @@ const {axiosInstance} = require(".");
 // Verify Receiver Account Information
 export const VerifyAccount = async (payload) =>{
     try {
-        const {data} = await axiosInstance.post("/api/transaction/verify-account", payload);
+        const {data} = await axiosInstance.post("https://wallet-api-j3g6.onrender.com/api/transaction/verify-account", payload);
         return data;
     } catch (error) {
         return error.response.data
@@ -15,7 +15,7 @@ export const VerifyAccount = async (payload) =>{
 
 export const TransferFund = async (payload) => {
     try {
-        const {data} = await axiosInstance.post("/api/transaction/transfer-fund", payload);
+        const {data} = await axiosInstance.post("https://wallet-api-j3g6.onrender.com/api/transaction/transfer-fund", payload);
         return data;
     } catch (error) {
         return error.response.data
@@ -30,7 +30,7 @@ export const getTransactions = async () => {
   try {
     const token = localStorage.getItem('token');
     const { data } = await axiosInstance.get(
-      "/api/transaction/user-transactions",
+      "https://wallet-api-j3g6.onrender.com/api/transaction/user-transactions",
       {
         headers: { Authorization: `Bearer ${token}` }, // Ensure token is sent.
       }
@@ -56,7 +56,7 @@ export const getTransactions = async () => {
 
 export const DepositFund = async (payload) => {
     try {
-        const {data} = await axiosInstance.post("/api/transaction/deposit-fund", payload);
+        const {data} = await axiosInstance.post("https://wallet-api-j3g6.onrender.com/api/transaction/deposit-fund", payload);
         return data;
     } catch (error) {
         return error.response.data

@@ -18,7 +18,7 @@ export const GetAllRequestsByUser = async () => {
   try {
     const token = localStorage.getItem('token');
     const { data } = await axiosInstance.get(
-      "/api/transaction/user-requests",
+      "https://wallet-api-j3g6.onrender.com/api/transaction/user-requests",
       {
         headers: { Authorization: `Bearer ${token}` }, // Ensure token is sent.
       }
@@ -43,7 +43,7 @@ export const GetAllRequestsByUser = async () => {
 export const SendRequest = async (request) => {
   try {
     const { data } = await axiosInstance.post(
-      "/api/requests/send-request",
+      "https://wallet-api-j3g6.onrender.com/api/requests/send-request",
       request
     );
     return data;
@@ -56,7 +56,7 @@ export const SendRequest = async (request) => {
 export const UpdateRequestStatus = async (request) => {
   try {
     const { data } = await axiosInstance.post(
-      "/api/transaction/update-request",
+      "https://wallet-api-j3g6.onrender.com/api/transaction/update-request",
       request
     );
     return data;
